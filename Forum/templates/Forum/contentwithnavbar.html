@@ -1,0 +1,408 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Content</title>
+    <link rel="icon" type="image/png" href="img/geekhub.png"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/library/custom.css' %}" rel="stylesheet" type="text/css" media="screen, projection"/>
+    <link href="{% static 'css/library/stylesheet.css' %}" rel="stylesheet" type="text/css" media="screen, projection" />
+    <link href="{% static 'css/library/colours.css' %}" rel="stylesheet" type="text/css" media="screen, projection" />
+    <link href="{% static 'css/library/lib.css'  %}" rel="stylesheet" type="text/css" media="screen,projection" />
+    <link href="{% static 'css/library/style.css' %}" rel="stylesheet">
+
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' %}">
+<body>
+<!-- tt-mobile menu -->
+<nav class="panel-menu" id="mobile-menu">
+    <ul>
+
+    </ul>
+    <div class="mm-navbtn-names">
+        <div class="mm-closebtn">
+            Close
+            <div class="tt-icon">
+                <svg>
+                  <use xlink:href="#icon-cancel"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="mm-backbtn">Back</div>
+    </div>
+</nav>
+<header id="tt-header">
+    <div class="container">
+        <div class="row tt-row no-gutters">
+            <div class="col-auto">
+                <!-- toggle mobile menu -->
+                <a class="toggle-mobile-menu" href="#">
+                    <svg class="tt-icon">
+                      <use xlink:href="#icon-menu_icon"></use>
+                    </svg>
+                </a>
+                <!-- /toggle mobile menu -->
+                <!-- logo -->
+                <div class="tt-logo">
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+                <!-- /logo -->
+                <!-- desctop menu -->
+                <div class="tt-desktop-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="home.html"><span>Home</span></a></li>
+                            <li><a href="Post.html"><span>Posts</span></a></li>
+                            <li><a href="library.html"><span>Library</span></a></li>
+                            <li>
+                                <a><span style="font-weight: bolder;">More</span></a>
+                                <ul style="font-weight: 450;">
+                                    <li><a href="index.html">Contact Us</a></li>
+                                    <li><a href="faq">FAQ</a></li>
+                                    <li style="font-weight: bolder;"><a href="logout.html">Logout</a></li>
+                                   
+                                   
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /desctop menu -->
+                <!-- tt-search -->
+                <div class="tt-search">
+                    <!-- toggle -->
+                    <button class="tt-search-toggle" data-toggle="modal" data-target="#modalAdvancedSearch">
+                       <svg class="tt-icon">
+                          <use xlink:href="#icon-search"></use>
+                        </svg>
+                    </button>
+                    <!-- /toggle -->
+                    <form class="search-wrapper">
+                        <div class="search-form">
+                            <input type="text" class="tt-search__input" placeholder="Search">
+                            <button class="tt-search__btn" type="submit">
+                               <svg class="tt-icon">
+                                  <use xlink:href="#icon-search"></use>
+                                </svg>
+                            </button>
+                             <button class="tt-search__close">
+                               <svg class="tt-icon">
+                                  <use xlink:href="#cancel"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="search-results">
+                            <button type="button" class="tt-view-all" data-toggle="modal" data-target="#modalAdvancedSearch">Advanced Search</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /tt-search -->
+            </div>
+            <div class="col-auto ml-auto">
+                 <div class="tt-user-info d-flex justify-content-center">
+                    <a href="#" class="tt-btn-icon">
+                         <i class="tt-icon"><svg><use xlink:href="#icon-notification"></use></svg></i>
+                    </a>
+                    <div class="userinfo pull-left">
+                        <div class="avatar">
+                           <a href="" ><img src="img/avatar.jpg" alt="" style="width: 40px;height: 40px;" />
+                            </a>
+                        </div>
+    
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- add new topic -->
+<a href="page-create-topic.html" class="tt-btn-create-topic">
+    <span class="tt-icon">
+        <svg>
+          <use xlink:href="#icon-create_new"></use>
+        </svg>
+    </span>
+</a>
+<!-- main body part  -->
+<main id="tt-pageContent">
+    <div class="tt-custom-mobile-indent container">
+        <div id="wrap-subhead">
+            <div class="chunk">
+        
+                <div id="subhead-title">           
+                    <h4 class="forum-title"><a href="#">Welcome</a></h4>
+
+                </div>
+                
+            </div>
+        </div>
+        <div id="wrap-body">
+            <div class="chunk-main">
+        
+                        <div id="p1" class="post has-profile bg2">
+                        <div class="inner">
+        
+                        <dl class="postprofile" id="profile1">
+                            <dt class="has-profile-rank no-avatar">
+                                <div class="avatar-container">
+            </div>
+        
+                                <a href="#" style="color: #AA0000;" class="username-coloured">Admin</a>
+                                
+                            </dt>
+        
+                            <dd class="profile-rank">Site Admin</dd>
+                            
+                        <dd class="profile-posts"><strong>Posts:</strong> 
+                        <a href="#">1</a></dd>				
+                        <dd class="profile-joined"><strong>Joined:</strong> Sun Jab 2, 2019 3:16 am</dd>				
+                                    
+                                                        
+                        </dl>
+        
+                        <div class="postbody">
+                            <div id="post_content1">
+        
+                            
+                            <h3 class="first"><a href="#p1">Welcome </a></h3>
+                            <ul class="posts-buttons">																																			<li>
+                            <li>
+                                <a href="#"><i class="fa fa-pencil-square-o" style="font-size: 20px;font-weight: bold;"></i><span>Edit</span></a>
+                            </li>
+                            </ul>
+        
+                            
+                            <p class="author"><a href="./viewtopic.php?style=4&amp;p=1#p1">Sun Feb 24, 2019 3:16 am</a> </p>
+        
+                            <div class="content" style="font-size: medium;">eta chai user ko question !</div>
+                                                        
+                      </div>
+        
+                        </div>
+                        </div>
+                    </div>
+                    <hr class="divider">
+                            
+                </div>
+                        <div class="tt-item">
+                            <div class="tt-single-topic">
+                               <div class="tt-item-header pt-noborder">
+                                   <div class="tt-item-info info-top">
+                                       <div class="tt-avatar-icon">
+                                           <div class="avatar">
+                                        <img src="img/avatar.jpg" alt="" style="width: 40px;height: 40px;">
+                                            </div>
+                                       </div>
+                                       <div class="tt-avatar-title">
+                                          <a href="#">Username</a>
+                                       </div>
+                                   
+                                       <a href="#" class="tt-info-time">
+                                           <i class="tt-icon"><svg><use xlink:href="#icon-time"></use></svg></i>6 Jan,2019
+                                       </a>
+                                      
+                                       
+                                   </div>
+                               </div>
+                               <div class="tt-item-description">
+                                   Comments are gonna be here!!!
+                               </div>
+                               <div class="tt-item-info info-bottom">
+                                   <a href="#" class="tt-icon-btn">
+                                       <i class="tt-icon"><svg><use xlink:href="#icon-like"></use></svg></i>
+                                       <span class="tt-text">671</span>
+                                   </a>
+                                   <a href="#" class="tt-icon-btn">
+                                        <i class="tt-icon"><svg><use xlink:href="#icon-dislike"></use></svg></i>
+                                       <span class="tt-text">39</span>
+                                   </a>
+                                   
+                                   <div class="col-separator"></div>
+                                   <a href="#" class="tt-icon-btn">
+                                    <i class="tt-icon"><svg><use xlink:href="#icon-pencil"></use></svg></i>
+                                   </a>
+                                   <a href="#" class="tt-icon-btn">
+                                    <i class="tt-icon"><svg><use xlink:href="#icon-cancel"></use></svg></i>
+                                   </a>                                    
+                               </div>
+                           </div>
+                           <hr class="style1">
+                       </div>
+                       <hr class="divider">
+                        <div class="tt-item">
+                            <div class="tt-single-topic">
+                               <div class="tt-item-header pt-noborder">
+                                   <div class="tt-item-info info-top">
+                                       <div class="tt-avatar-icon">
+                                        <div class="avatar">
+                                            <img src="img/avatar.jpg" alt="" style="width: 40px;height: 40px;">
+                                                </div>
+                                       </div>
+                                       <div class="tt-avatar-title">
+                                          <a href="#">tesla02</a>
+                                       </div>
+                                   
+                                       <a href="#" class="tt-info-time">
+                                           <i class="tt-icon"><svg><use xlink:href="#icon-time"></use></svg></i>6 Jan,2019
+                                       </a>
+                                      
+                                       
+                                   </div>
+                               </div>
+                               <div class="tt-item-description">
+                                   Finally!<br>
+                                   
+                               </div>
+                               <div class="tt-item-info info-bottom">
+                                   <a href="#" class="tt-icon-btn">
+                                       <i class="tt-icon"><svg><use xlink:href="#icon-like"></use></svg></i>
+                                       <span class="tt-text">671</span>
+                                   </a>
+                                   <a href="#" class="tt-icon-btn">
+                                        <i class="tt-icon"><svg><use xlink:href="#icon-dislike"></use></svg></i>
+                                       <span class="tt-text">39</span>
+                                   </a>
+                                   
+                                   <div class="col-separator"></div>
+                                   <a href="#" class="tt-icon-btn">
+                                    <i class="tt-icon"><svg><use xlink:href="#icon-pencil"></use></svg></i>
+                                   </a>
+                                   <a href="#" class="tt-icon-btn">
+                                    <i class="tt-icon"><svg><use xlink:href="#icon-cancel"></use></svg></i>
+                                   </a>                                    
+                               </div>
+                           </div>
+                           <hr class="style1">
+                       </div>
+                       <div class="pagination">
+                        1 topic &bull; Page <strong>1</strong> of <strong>1</strong>
+                         </div>
+                       </div>
+                    </div>
+<!-- advance search -->
+<div class="modal fade" id="modalAdvancedSearch" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="tt-modal-advancedSearch">
+				<div class="tt-modal-title">
+					<i class="pt-icon">
+						<svg>
+							<use xlink:href="#icon-advanced_search"></use>
+						</svg>
+					</i>
+					Advanced Search
+					<a class="pt-close-modal" href="#" data-dismiss="modal">
+						<svg class="icon">
+							<use xlink:href="#icon-cancel"></use>
+						</svg>
+					</a>
+				</div>
+				<form class="form-default">
+					<div class="form-group">
+						<i class="pt-customInputIcon">
+                           <svg class="tt-icon">
+                              <use xlink:href="#icon-search"></use>
+                            </svg>
+                        </i>
+						<input type="text" name="name" class="form-control pt-customInputSearch" id="searchForum" placeholder="Search all forums">
+					</div>
+					<div class="form-group">
+						<label for="searchName">Posted by</label>
+						<input type="text" name="name" class="form-control" id="searchName" placeholder="Username">
+					</div>
+					<div class="form-group">
+						<label for="searchCategory">Subject</label>
+						<input type="text" name="name" class="form-control" id="searchSubject" placeholder="Add Subject">
+					</div>
+					<!-- <div class="checkbox-group">
+				        <input type="checkbox" id="searcCheckBox01" name="checkbox">
+				        <label for="searcCheckBox01">
+				            <span class="check"></span>
+				            <span class="box"></span>
+				            <span class="tt-text">Include all tags</span>
+				        </label>
+				    </div>
+					<div class="form-group">
+						<label>Only return topics/posts that...</label>
+						<div class="checkbox-group">
+					        <input type="checkbox" id="searcCheckBox02" name="checkbox">
+					        <label for="searcCheckBox02">
+					            <span class="check"></span>
+					            <span class="box"></span>
+					            <span class="tt-text">I liked</span>
+					        </label>
+					    </div>
+					    <div class="checkbox-group">
+					        <input type="checkbox" id="searcCheckBox03" name="checkbox">
+					        <label for="searcCheckBox03">
+					            <span class="check"></span>
+					            <span class="box"></span>
+					            <span class="tt-text">are in my messages</span>
+					        </label>
+					    </div>
+					    <div class="checkbox-group">
+					        <input type="checkbox" id="searcCheckBox04" name="checkbox">
+					        <label for="searcCheckBox04">
+					            <span class="check"></span>
+					            <span class="box"></span>
+					            <span class="tt-text">I’ve read</span>
+					        </label>
+					    </div>
+					</div>
+					<div class="form-group">
+						<select class="form-control" id="searchTop">
+							<option>any</option>
+							<option>value 01</option>
+							<option>value 02</option>
+							<option>value 03</option>
+						</select>
+					</div> -->
+					<div class="form-group">
+                        <label for="searchaTopics">Semester</label>
+						<select class="form-control" id="searchSemester">
+                            
+							<option>any</option>
+							<option>Semester I</option>
+							<option>Semester II</option>
+                            <option>Semester III</option>
+                            <option>Semester IV</option>
+                            <option>Semester V</option>
+                            <option>Semester VI</option>
+                            <option>Semester VII</option>
+							<option>Semester VIII</option>
+
+                        </select>
+                    
+					</div>
+					<div class="form-group">
+						<label for="searchAdvTime">Posted</label>
+						<div class="row">
+							<div class="col-6">
+								<select class="form-control">
+									<option>any</option>
+									<option>value 01</option>
+									<option>value 02</option>
+									<option>value 03</option>
+								</select>
+							</div>
+							<div class="col-6">
+								<input type="text" name="name" class="form-control" id="searchAdvTime" placeholder="dd-mm-yyyy">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<a href="#" class="btn btn-secondary btn-block">Search</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% include "forum/jsfrontend.html" %}
+</body>
+</html>

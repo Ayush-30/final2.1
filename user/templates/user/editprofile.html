@@ -1,0 +1,106 @@
+{% extends 'forum/navbar2.html' %}
+{% load static %}
+{% block content %}
+<style>
+    input[type=text],input[type=email],input[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+  select{
+      width: 100%;
+      height: 100%;
+      margin: 8px 0;
+      padding: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  }
+button{
+    margin-top: 5px;
+}
+button.button {
+    font-size: 16px;
+    position: relative;
+    width: 35%;
+    height: 45px;
+    margin-top: 25px;
+    left:0;
+}
+
+</style>
+<body>
+<div id="wrap-subhead">
+    <div class="chunk">
+        <div id="subhead-title">
+            <h3>navbar space</h3>
+        </div>
+    </div>
+</div>
+<div style="margin-bottom: 15mm;"></div>
+<div class="col-sm-12 ">
+    <div id="wrap-body">
+        <div class="chunk-main" >
+           <div id="wrap-subhead" style="margin-bottom: 25px">
+            <div class="chunk">
+                <div id="subhead-title">
+                    <h4 class="forum-title">Edit your profile here</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+ <form action="" class="form newtopic" method="POST" enctype="multipart/form-data" id="At">
+    {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="#">Username</label>
+      {{ u_form.username }}
+    </div>
+    <div class="form-group col-md-6">
+      <label for="#">Email</label>
+      {{ u_form.email }}
+    </div>
+  </div>
+      <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="#">Date of Birth</label>
+        {{ p_form.date_of_birth}}
+    </div>
+    <div class="form-group col-md-6">
+      <label for="#">Contact No.</label>
+      {{ p_form.contact_number}}
+    </div>
+
+  </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+      <label for="#">College</label>
+      {{ p_form.college}}
+        </div>
+        <div class="form group col-md-6">
+        <div class="form-group">
+            <label >Semester</label>
+            {{ p_form.semester}}
+        </div>
+    </div>
+    </div>
+    <div class="form-row">
+        <div class="form group col-md-6">
+              <label for="email"><b>Image</b></label>
+                            {{ p_form.user_image}}
+        </div>
+    </div>
+    <div class="form group col-md-6">
+    <button type="submit" class="button font-icon" location.href='{% url 'profile' %}'">Update</button>
+    </div>
+</form>
+</div>
+{% include "forum/jsfrontend.html" %}
+</body>
+
+{% endblock content %}

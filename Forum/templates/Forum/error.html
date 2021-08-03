@@ -1,0 +1,152 @@
+{% extends 'forum/navbar2.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+<!-- main body part  -->
+<main id="tt-pageContent">
+    <div class="tt-custom-mobile-indent container">
+        {% for b in question %}
+            <div id="wrap-body">
+                <div class="chunk-main">
+                    <div id="p1" class="post has-profile bg2">
+                        <div class="inner">
+                            <dl class="postprofile" id="profile1">
+                                <dt class="has-profile-rank no-avatar">
+                                    {% if b.posted_by.profile.user_image.url %}
+                                            <img src="{{ b.posted_by.profile.user_image.url }}" alt="User Name" style="width: 40px;height: 40px;">
+                                    {% else %}
+                                            <img src="{% static 'img/avatar.jpg' %}" alt="User Name" style="width:100%">
+                                    {% endif %}
+                                    <div class="avatar-container" style="margin-top: 15px;">
+                                       <a href="{% url 'user_profile_display' b.question_id %}" style="color: #AA0000;" class="username-coloured">{{ b.posted_by }}</a>
+                                    </div>
+
+                                </dt><br>
+                                {{b.posted_by.profile.semester}}
+                                <br>
+                                <dd class="profile-posts"><strong>No of posts::</strong>
+                                    <a href="#">{{ b.posted_by.profile.number_of_posts }}</a>
+                                </dd>
+<!--                                <dd class="profile-joined"><strong>Posted on:</strong> {{ b.date_posted|date:"F d, Y" }}</dd>-->
+                            </dl>
+                            <div class="postbody">
+                                <div id="post_content1">
+                                    <h4 class="first"><strong>{{b.question_subject}}</strong></h4>
+                                    <p class="author">{{ b.date_posted|date:"F d, Y" }} </p>
+                                    <div class="content" style="font-size: medium;">{{b.question_content}}</div>
+                                    <div class="tt-item-info info-bottom">
+                                        <div style = "position:absolute; top: 8px;right: 20px;">
+                                            {% if request.user == b.posted_by %}
+                                           <a href="{% url 'questionupdate' b.question_id %}" class="tt-icon-btn">
+                                                <i class="tt-icon"><svg><use xlink:href="#icon-pencil"></use></svg></i>
+                                            </a>
+                                            {% endif %}
+<!--                                        <a href="#" class="tt-icon-btn">-->
+<!--                                        <i class="tt-icon"><svg><use xlink:href="#icon-cancel"></use></svg></i>-->
+<!--                                        </a>-->
+                                        </div>
+
+                                    </div>
+                                    <a href="{% url 'like_question' b.question_id %}" class="tt-icon-btn">
+                                       <i class="tt-icon"><svg><use xlink:href="#icon-like"></use></svg></i>
+
+                                       <span class="tt-text">{{ b.question_like.count }}</span>
+                                    </a>
+<!--                                    <a href="#" class="tt-icon-btn">-->
+<!--                                        <i class="tt-icon"><svg><use xlink:href="#icon-dislike"></use></svg></i>-->
+<!--                                       <span class="tt-text">39</span>-->
+<!--                                    </a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+             <div class="col-sm-12 text-left">
+                    <button class="btn btn-secondary btn-width-lg" onclick="document.getElementById('Simquer').style.display='block';" style=font-size:18px">
+                         Similar query</button>
+                         <div id="Simquer" class="modal1" style="padding-left:25px" >
+                                <span onclick="document.getElementById('Simquer').style.display='none'" class="close1" title="Close Modal" style="padding-top: 30px;">&times;</span>
+                                    <div class="model-content">
+                                        <h3 style="text-align:center;">Similar question</h3>
+                                         {% for b in q %}
+                                        <ul style="list-style-type:square;text-align: left;">
+
+                                            <li><a href="{% url 'viewquestion' b.id %}" class="topictitle" style="font-size: 20px;">{{ b.Title }}</a></li>
+                                        </ul>
+
+                                        {% endfor %}
+                                         </div>
+                                    </div>
+                               <hr class="style1">
+                                <form method="POST">
+                                    <div class="form-group">
+                                        {% csrf_token %}
+                                        <textarea name="answer_text" class="form-control" rows="5" style="width:100%" placeholder="Comment Here"></textarea>
+                                    </div>
+                                    <div class="col-sm-12 text-left">
+                                        <p align="right">
+                                            <button type="submit" class="btn btn-secondary btn-width-lg">Comment</a></button>
+                                        </p>
+                                    </div>
+                                </form>
+                 </div>
+    </div>
+                    <div class="container">
+                                       <div class="tt-item">
+                                       {% for a in answers %}
+                                           <div class="tt-single-topic">
+                                               <div class="tt-item-header pt-noborder">
+                                                   <div class="tt-item-info info-top">
+                                                       <div class="tt-avatar-icon">
+                                                           <div class="avatar">
+                                                                    {% if a.posted_by.profile.user_image.url %}
+                                                                             <img src="{{ a.posted_by.profile.user_image.url }}" alt="User Name" style="width:30%">
+                                                                        {% else %}
+                                                                                <img src="{% static 'img/default.jpg' %}" alt="User Name" style="width:30%">
+                                                                        {% endif %}
+                                                                    </div>
+                                                               </div>
+                                                               <div class="tt-avatar-title">
+                                                                  <a href="#">{{ a.posted_by }}</a>
+                                                               </div>
+
+                                                               <a href="#" class="tt-info-time">
+                                                                   <i class="tt-icon"><svg><use xlink:href="#icon-time"></use></svg></i>{{ a.date_posted|timesince }}  Ago
+                                                               </a>
+
+
+                                                           </div>
+                                                       </div>
+                                                       <div class="tt-item-description">
+                                                          {{ a.answer_text }}
+                                                       </div>
+                                                       <div class="tt-item-info info-bottom">
+                                                           <a href="{% url 'like_question' a.question_id %}" class="tt-icon-btn">
+                                                               <i class="tt-icon"><svg><use xlink:href="#icon-like"></use></svg></i>
+                                                               <span class="tt-text">{{ a.liked.count }}</span>
+                                                           </a>
+
+
+                                                           <div class="col-separator"></div>
+                                                           <a href="#" class="tt-icon-btn">
+                                                            <i class="tt-icon"><svg><use xlink:href="#icon-pencil"></use></svg></i>
+                                                           </a>
+                                                           <a href="#" class="tt-icon-btn">
+                                                            <i class="tt-icon"><svg><use xlink:href="#icon-cancel"></use></svg></i>
+                                                           </a>
+                                                       </div>
+                                                   </div>
+                                                   <hr class="style1">
+                                           </div>
+                                         {% endfor %}
+                    </div>
+                                        </div>
+
+
+{% include "forum/jsfrontend.html" %}
+{% endblock content %}
+</body>
+</html>

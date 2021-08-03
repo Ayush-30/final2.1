@@ -1,0 +1,71 @@
+{% extends 'forum/navbar2.html' %}
+{% load static %}
+{% block content %}
+<body>
+
+<br>
+     <div id="wrap-subhead" style="margin-bottom: 25px">
+            <div class="chunk">
+                <div id="subhead-title">
+                    <h4 class="forum-title">Nav Sace</h4>
+                </div>
+            </div>
+      <div id="wrap-subhead" style="margin-bottom: 25px">
+      <div id="wrap-body">
+		<div class="chunk-main" >
+           <div id="wrap-subhead" style="margin-bottom: 25px">
+            <div class="chunk">
+                <div id="subhead-title">
+                    <h4 class="forum-title">Your Geekhub Profile</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+        </div>
+<div class="col-xl-12">{% include "forum/message.html" %}
+    <div class="container">
+        <div class="bg-light d-flex justify-content-between">
+        <div class="profile-avatar-img" >
+            <img src="{{ user.profile.user_image.url }}" alt="User Name" style="width: 100%"><hr>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Date Joined :&nbsp </strong></span>{{ user.date_joined}}</li>
+            <p style="text-align:center;">
+                {% if request.user.username == user.username %}
+                    <br>
+                    <a class="btn btn-success btn-sm" href="{% url 'editprofile' %}" class="btn btn-info btn-lg">
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                    </a>
+                {% endif %}
+            </p>
+        </div>
+        <div class="pull-left justify-content-between">
+            <p class="text-secondary" >Username :</p>
+            <p class="text-primary" >{{ user.username }}</p>
+<!--            <hr>-->
+            <p class="text-secondary" >Email Address :</p>
+            <p class="text-primary" > {{ user.email }}</p>
+<!--            <hr>-->
+            <p class="title" >Semester : </p>
+            <p class="text-primary" >{{ user.profile.semester }} </p>
+<!--            <hr>-->
+            <p class="title" >Date of Birth: </p>
+            <p class="text-primary">{{ user.profile.date_of_birth }} </p>
+<!--            <hr>-->
+            <p class="title">Contact Number : </p>
+            <p class="text-primary" >{{ user.profile.contact_number }} </p>
+<!--            <hr>-->
+            <p class="title">College Name : </p>
+            <p class="text-primary">{{ user.profile.college }}</p>
+
+        </div>
+        <br>
+    </div>
+   </div>
+</div>
+
+
+{% include "forum/jsfrontend.html" %}
+{% endblock content %}
+
+</body>
+</html>
